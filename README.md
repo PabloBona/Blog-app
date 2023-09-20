@@ -117,5 +117,5 @@ Feel free to check the issues [page](https://github.com/PabloBona/Blog-app/issue
 If you find this project helpful, consider giving it a ⭐️ to show your support!
 
 ## 📜 License <a name="license"></a>
-This project is [MIT](https://github.com/PabloBona/Blog-app/blob/feature/setup-lint/MIT.md) licensed.
+This project is [MIT](https://github.com/PabloBona/Blog-app/blob/dev/MIT.md) licensed.
 
