@@ -1,4 +1,4 @@
-# Blog App (Ruby on Rails)
+# 'Adventures in Writing' (Ruby on Rails Blog App)
 
 ## 📗 Table of Contents
 
@@ -24,7 +24,7 @@ Welcome to the Blog App, a Ruby on Rails-based application for creating and mana
 This project is built using Ruby on Rails, a powerful web framework known for its simplicity and productivity. Ruby on Rails provides an ideal foundation for creating web applications quickly and efficiently.
 
 
-## Key Features <a name="key-features"></a>
+##  Key Features <a name="key-features"></a>
 
 - [ ] Full-fledged Ruby on Rails application.
 - [ ] User authentication and authorization.
@@ -36,7 +36,7 @@ This project is built using Ruby on Rails, a powerful web framework known for it
 
 Note: Each feature will be marked with an "x" when it is fully implemented and functional.
 
-## Future Features <a name="future-project"></a>
+## 🔭 Future Features <a name="future-project"></a>
 
 - [ ] Search functionality for finding specific articles.
 - [ ] User profiles with customizable avatars.
@@ -49,7 +49,7 @@ Note: Each feature will be marked with an "x" when it is fully implemented and f
 
 To get started with the Blog App, follow the instructions below:
 
-### Setup <a name="setup"></a>
+### 🛠 Setup <a name="setup"></a>
 
 1. Clone the project repository:
 
@@ -84,7 +84,7 @@ Before you can run the Blog App, make sure you have the following prerequisites 
 
 With these prerequisites and configurations in place, you'll be ready to set up and run the Blog App.
 
-### Usage <a name="usage"></a>
+### 📖 Usage <a name="usage"></a>
 Follow these steps to use the Blog App:
 
 Open your terminal.
