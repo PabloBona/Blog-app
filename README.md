@@ -23,7 +23,9 @@ Welcome to the Blog App, a Ruby on Rails-based application for creating and mana
 
 This project is built using Ruby on Rails, a powerful web framework known for its simplicity and productivity. Ruby on Rails provides an ideal foundation for creating web applications quickly and efficiently.
 
-## Key Features <a name="key-features"></a>
+Por supuesto, aquí está en inglés:
+
+## Key Features (Not implemented yet) <a name="key-features"></a>
 
 - [ ] Full-fledged Ruby on Rails application.
 - [ ] User authentication and authorization.
@@ -32,6 +34,8 @@ This project is built using Ruby on Rails, a powerful web framework known for it
 - [ ] Liking and unliking articles.
 - [ ] Responsive web design.
 - [ ] Robust error handling and validation.
+
+Note: Each feature will be marked with an "x" when it is fully implemented and functional.
 
 ## Future Features <a name="future-project"></a>
 
@@ -59,13 +63,27 @@ To get started with the Blog App, follow the instructions below:
     cd Blog-app
     ```
 
-### Prerequisites <a name="prerequisites"></a>
-To run the Blog App, you'll need the following prerequisites:
+Claro, aquí está la actualización considerando tus comentarios:
 
-- Ruby installed on your machine.
-- Ruby on Rails framework installed.
-- A code editor like Visual Studio Code.
-- Git for version control.
+### Prerequisites <a name="prerequisites"></a>
+Before you can run the Blog App, make sure you have the following prerequisites and configurations in place:
+
+- **Ruby**: Ensure that Ruby is installed on your machine. You can check if it's installed by running `ruby -v` in your terminal. If it's not installed, you can download and install it from the [official Ruby website](https://www.ruby-lang.org/en/documentation/installation/).
+
+- **Ruby on Rails**: You'll need the Ruby on Rails framework installed. If you don't have it yet, you can install it using the following command:
+  ```
+  gem install rails
+  ```
+
+- **Code Editor**: You should have a code editor like Visual Studio Code (VSCode) installed. You can download VSCode from the [official website](https://code.visualstudio.com/).
+
+- **Git**: Git is essential for version control. Make sure you have Git installed and configured on your system. You can download Git from the [official Git website](https://git-scm.com/downloads).
+
+- **PostgreSQL**: Ensure that PostgreSQL is installed and properly configured on the server where you are developing the project. This project assumes the use of PostgreSQL as the default database. You can download PostgreSQL from the [official PostgreSQL website](https://www.postgresql.org/download/).
+
+- **Ruby on Rails Configuration**: Make sure your Ruby on Rails project is configured to use PostgreSQL as the default database.
+
+With these prerequisites and configurations in place, you'll be ready to set up and run the Blog App.
 
 ### Usage <a name="usage"></a>
 Follow these steps to use the Blog App:
@@ -74,14 +92,14 @@ Open your terminal.
 
 Navigate to the directory where the project files are located:
 
-```bash
 Copy code
+```bash
 cd /path/to/your/project/files
 ```
 Start the Rails server:
 
-```bash
 Copy code
+```bash
 rails server
 ```
 Open your web browser and go to http://localhost:3000 to access the Blog App.
