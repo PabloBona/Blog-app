@@ -24,7 +24,7 @@ Welcome to the Blog App, a Ruby on Rails-based application for creating and mana
 This project is built using Ruby on Rails, a powerful web framework known for its simplicity and productivity. Ruby on Rails provides an ideal foundation for creating web applications quickly and efficiently.
 
 
-## Key Features (Not implemented yet) <a name="key-features"></a>
+## Key Features <a name="key-features"></a>
 
 - [ ] Full-fledged Ruby on Rails application.
 - [ ] User authentication and authorization.
