@@ -7,8 +7,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Associations' do
-    it { should have_many(:posts).with_foreign_key('author_id') }
-    it { should have_many(:comments).with_foreign_key('author_id') }
+    it { should have_many(:posts).with_foreign_key(:author_id) }
+    it { should have_many(:comments).with_foreign_key(:author_id) }
     it { should have_many(:likes) }
   end
 
