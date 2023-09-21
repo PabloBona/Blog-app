@@ -62,7 +62,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   # spec/rails_helper.rb
-
+  config.include FactoryBot::Syntax::Methods
   # Include shoulda-matchers configuration
   Shoulda::Matchers.configure do |config| # rubocop:disable Lint/ShadowingOuterLocalVariable
     config.integrate do |with|
