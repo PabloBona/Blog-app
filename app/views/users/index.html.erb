@@ -7,14 +7,18 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="mt-2">All Users</h1>
-    <p class="lead">Here you can see all the users of the blog.</p>
+    <div class="row">
+      <div class="col-sm">
+        <h1 class="mt-2">All Users</h1>
+        <p class="lead">Here you can see all the users of the blog.</p>
+      </div>
+    </div>
+
     <div class="row">
       <ul class="list-group w-100 list-unstyled">
         <% @users.reverse_each do |user| %>
-          <li class=" ">
-            <div class="row">
-              <div class="col-sm-2 border rounded m-1">
+          <li class="row my-1">
+              <div class="col-sm-2 border rounded ">
                 <div class="d-flex align-items-center">
                   <div class="user-photo mt-5 ">
                     <% if user.photo && user.photo.match(/\.(png|jpg|jpeg|gif)$/i) %>
@@ -25,11 +29,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-9 border rounded m-1">
+              <div class="col-sm-10 border rounded ">
                 <div class="d-flex align-items-center">
                   <div class="user-info w-100">
                     <h5 class="user-name mt-5">
-                      <%= user.name %>  
+                      <%= link_to user.name, user_path(user) %> 
                     </h5>
                     <p class="user-posts text-right">
                       Number of posts: <%= user.posts_counter %>  
@@ -37,7 +41,6 @@
                   </div>
                 </div>
               </div>
-            </div>
           </li>
         <% end %>
       </ul>
