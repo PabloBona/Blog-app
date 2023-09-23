@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Details</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container ">
+  <div class="row">
+    <div class="col-sm-12  ">
+      <h1 class="mt-2">User Details</h1>
+      <p class="lead">Here you can see all the users of the blog.</p>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-2 border rounded">
+          <div class="user-photo  mt-5">
+            <% if @user.photo && @user.photo.match(/\.(png|jpg|jpeg|gif)$/i) %>
+              <img src="<%= @user.photo %>" alt="User Photo">
+            <% else %>
+              User<%= @user.id %> Pic
+            <% end %>
+        </div>
+      </div>
+      <div class="col-sm-10 border rounded">
+          <h5 class="user-name mt-5">
+            <%= @user.name %>  
+          </h5>
+          <p class="user-posts text-right">
+            Number of posts: <%= @user.posts_counter %>  
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container ">
+    <div class="row">
+       <div class="col-sm-12 border rounded my-3">
+          <h5 class="user-name py-3">
+            <%= @user.name %>  Bio
+          </h5>
+          <p class="user-name ">
+            <%= @user.bio %>  
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-sm-12 border rounded my-3">
+          <h5 class="user-name py-3">
+            Post<%= post.id %>
+          </h5>
+          <h3 class="user-name">
+            <%= post.title %>
+          </h3>
+          <p class="user-name">
+            <%= post.text %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <div>
+    <div class="container ">
+      <div class="row">
+        <div class="col text-center mb-3">
+          <a href="/" class="btn btn-primary">See all posts</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

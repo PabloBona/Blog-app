@@ -7,28 +7,28 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="mt-5">All Users</h1>
+    <h1 class="mt-2">All Users</h1>
     <p class="lead">Here you can see all the users of the blog.</p>
     <div class="row">
-      <ul class="list-group mt-4 w-100">
-        <% @users.each do |user| %>
-          <li class="list-group-item">
+      <ul class="list-group w-100 list-unstyled">
+        <% @users.reverse_each do |user| %>
+          <li class=" ">
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-sm-2 border rounded m-1">
                 <div class="d-flex align-items-center">
-                  <div class="user-photo mr-3">
+                  <div class="user-photo mt-5 ">
                     <% if user.photo && user.photo.match(/\.(png|jpg|jpeg|gif)$/i) %>
                       <img src="<%= user.photo %>" alt="User Photo">
                     <% else %>
-                      PhotoUSer<%= user.id %>
+                      User <%= user.id %> Pic
                     <% end %>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-9 border rounded m-1">
                 <div class="d-flex align-items-center">
                   <div class="user-info w-100">
-                    <h5 class="user-name">
+                    <h5 class="user-name mt-5">
                       <%= user.name %>  
                     </h5>
                     <p class="user-posts text-right">
