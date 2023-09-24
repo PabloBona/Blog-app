@@ -16,22 +16,20 @@
 
     <div class="row">
       <div class="col-sm-12 border rounded my-1">
-      <div class="align-items-baseline d-flex justify-content-between">
+        <div class="align-items-baseline d-flex justify-content-between">
           <h5 class="user-name py-3">
-            Post <%= @post.id %> by <%= @user.name %>
+            <%= link_to "Post #{@post.id}", user_posts_path(@user), title: "To User Posts" %> by <%= link_to @user.name, user_path(@user), title: "To User Details" %>
           </h5>
- 
-          <p><%= @post.comments.count %> comments</p>
-          <p><%= @post.likes.count %> Likes</p>
- 
+            <p><%= @post.comments.count %> comments</p>
+            <p><%= @post.likes.count %> Likes</p>
       </div>
-        <h5 class="user-name">
-          Post Title: <%= @post.title %> 
-        </h5>
+      <h5 class="user-name">
+        Post Title: <%= @post.title %> 
+      </h5>
         <p class="user-name">
           Post Text: <%= @post.text %>  
         </p>
-      </div>
+    </div>
 
 <div class="col-sm-12 border rounded my-3">
   <h4 class="user-name">Comments (<%= @post.comments.count %> comments):</h4>

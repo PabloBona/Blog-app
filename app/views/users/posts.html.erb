@@ -22,9 +22,9 @@
       <% else %>
         <% @posts.each do |post| %>
           <div class="col-sm-12 border rounded my-1">
-            <h5 class="user-name py-3">
-              Post <%= post.id %>
-            </h5>
+              <h5 class="user-name py-3">
+                <%= link_to "Post #{post.id}", user_post_path(@user, post), title: "To Post Details" %>
+              </h5>
             <h3 class="user-name">
               <%= post.title %>
             </h3>

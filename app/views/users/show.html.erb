@@ -25,10 +25,10 @@
       </div>
       <div class="col-sm-10 border rounded">
           <h5 class="user-name mt-5">
-            <%= @user.name %>  
+            <%= link_to @user.name, root_path, title:"To All Users" %>
           </h5>
           <p class="user-posts text-right">
-            Number of posts: <%= link_to @user.posts_counter, user_posts_path(@user) %>  
+             <%= link_to "Number of posts: #{@user.posts_counter}", user_posts_path(@user), title:"To User Posts" %>  
           </p>
       </div>
     </div>
