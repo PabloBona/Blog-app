@@ -4,6 +4,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:post_id])
+    @post = Post.find_by(id: params[:id])
+    @user = @post.author
+  end
+
+  def post
+    @user = User.find(params[:id])
+    @post = Post.find(params[:post_id])
   end
 end

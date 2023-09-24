@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   # Def users :id/posts route
   get '/users/:id/posts', to: 'users#posts', as: 'user_posts'
   # Def users :id/posts/post:id  route
-  get '/users/:id/posts/:post_id', to: 'users#post', as: 'user_post'
+  get '/users/:id/posts/:post_id', to: 'posts#show', as: 'user_post'
+
 end
