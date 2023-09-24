@@ -28,7 +28,7 @@
             <%= @user.name %>  
           </h5>
           <p class="user-posts text-right">
-            Number of posts: <%= @user.posts_counter %>  
+            Number of posts: <%= link_to @user.posts_counter, user_posts_path(@user) %>  
           </p>
       </div>
     </div>

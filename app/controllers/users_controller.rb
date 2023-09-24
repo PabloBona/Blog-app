@@ -7,4 +7,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
   end
+
+  def posts
+    @user = User.find(params[:id])
+    @posts = @user.posts
+    @user_name = @user.name
+  end
 end
