@@ -2,49 +2,27 @@
 <html>
 <head>
   <title>Post Details</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 my-3">
-        <h1 class="mt-2">Post Details</h1>
-        <p class="lead">Here you can see details of the post.</p>
-      </div>
-    </div>
+  <h1>Post Details</h1>
+  <p>Here you can see details of the post.</p>
 
-    <div class="row">
-      <div class="col-sm-12 border rounded my-1">
-        <div class="align-items-baseline d-flex justify-content-between">
-          <h5 class="user-name py-3">
-            <%= link_to "Post #{@post.id}", user_posts_path(@user), title: "To User Posts" %> by <%= link_to @user.name, user_path(@user), title: "To User Details" %>
-          </h5>
-            <p><%= @post.comments.count %> comments</p>
-            <p><%= @post.likes.count %> Likes</p>
-      </div>
-      <h5 class="user-name">
-        Post Title: <%= @post.title %> 
-      </h5>
-        <p class="user-name">
-          Post Text: <%= @post.text %>  
-        </p>
-    </div>
+  <!-- Placeholder for post details -->
+  <div class="post">
+    <h5>  Post X  by User Name </h5>
+    <p>X comments</p>
+    <p>X Likes</p>
+    <h5>Post Title: Post Title X</h5>
+    <p>Post Text: Post text goes here.</p>
+  </div>
 
-<div class="col-sm-12 border rounded my-3">
-  <h4 class="user-name">Comments (<%= @post.comments.count %> comments):</h4>
-  <ul class="list-unstyled">
-    <% if @post.comments.empty? %>
+  <!-- Placeholder for comments -->
+  <div class="comments">
+    <h4>Comments (X comments):</h4>
+    <ul>
       <li>No comments yet.</li>
-    <% else %>
-      <% @post.comments.each do |comment| %>
-        <li>
-          <strong><%= comment.user.name %>:</strong> <%= comment.text %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
-
+      <!-- You can add more comment entries as needed -->
+    </ul>
+  </div>
 </body>
 </html>

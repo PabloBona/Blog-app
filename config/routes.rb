@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   get '/users/:id/posts', to: 'users#posts', as: 'user_posts'
   get '/users/:id/posts/:post_id', to: 'posts#show', as: 'user_post'
-  get '/posts', to: 'posts#index', as: 'posts'  # Agregamos esta ruta
 
 end

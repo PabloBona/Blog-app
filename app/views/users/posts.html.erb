@@ -2,64 +2,28 @@
 <html>
 <head>
   <title>User Posts</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h1 class="mt-2">User <%= @user_name %> Posts</h1>
-        <p class="lead">Here you can see all the posts by this user.</p>
-      </div>
-    </div>
+  <h1>User Posts for <%= @user_name %></h1>
+  <p>Here you can see all the posts by this user.</p>
 
-    <div class="row">
-      <% if @posts.empty? %>
-        <div class="col-sm-12 border rounded my-1">
-          <p class="user-name">There are no posts available for this user.</p>
-        </div>
-      <% else %>
-        <% @posts.each do |post| %>
-          <div class="col-sm-12 border rounded my-1">
-              <h5 class="user-name py-3">
-                <%= link_to "Post #{post.id}", user_post_path(@user, post), title: "To Post Details" %>
-              </h5>
-            <h3 class="user-name">
-              <%= post.title %>
-            </h3>
-            <p class="user-name">
-              <%= post.text %>
-            </p>
-          </div>
-
-          <div class="col-sm-12 border rounded mb-5">
-            <h4 class="user-name">Comments:</h4>
-            <% if post.comments.empty? %>
-              <p class="user-name">This post has no comments.</p>
-            <% else %>
-              <% post.comments.each do |comment| %>
-                <p class="user-name">
-                  <%= comment.user.name %>: <%= comment.text %>
-                </p>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
+  <!-- Placeholder for posts -->
+  <div class="post">
+    <h5> Post 1 </h5>
+    <h3>Post Title 1</h3>
+    <p>Post content goes here.</p>
+    <div class="comments">
+      <h4>Comments:</h4>
+      <p>User 1: Comment 1</p>
+      <p>User 2: Comment 2</p>
+      <!-- You can add more comment entries as needed -->
     </div>
   </div>
+
+  <!-- You can repeat the above 'post' block for additional posts -->
 
   <div>
-    <div class="container">
-      <div class="row">
-        <div class="col text-center mb-3">
-          <%= link_to "Back to User Details", user_path(@user), class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
+    <p> Back to User Details </p>
   </div>
-  
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
