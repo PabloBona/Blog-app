@@ -22,3 +22,8 @@
   width: 100%;
   height: 100%;
 }
+
+.custom-border {
+  border: 1px solid #2a024b;
+  border-radius: 2%;
+}

@@ -8,16 +8,15 @@
 
   <div class="row">
     <div class="col">
-       
       <% @users.each do |user| %>
         <div class="my-3 row">
             <div class="align-items-center col-sm-2">
-                 <div class="border rounded-circle user-photo">
-                    <img class="rounded-circle" src="<%= user.photo %>" alt="User Photo">
+                 <div class="custom-border  user-photo">
+                    <img class="" src="<%= user.photo %>" alt="User Photo">
                  </div>
             </div>
             <div class="col-sm-10">
-              <div class="d-flex align-items-center h-100 border py-1 px-3">
+              <div class="d-flex align-items-center h-100 custom-border py-1 px-3">
                 <div class="user-info w-100">
                   <h5 class="user-name">
                     <%= link_to user.name, user_path(user), title:"To User Details" %> 
