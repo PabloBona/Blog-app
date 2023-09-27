@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12 my-3">
@@ -12,30 +11,33 @@
       <div class="align-items-baseline d-flex justify-content-between">
         <h5 class="user-name py-3">
           <%= link_to "Post #{@post.id}", user_posts_path(user_id: @user.id, id: @post.id), title: "To User Posts" %> by <%= link_to @user.name, user_path(@user), title: "To User Details" %>
-
         </h5>
-          <p><%= @post.comments.count %> comments</p>
-          <p><%= @post.likes.count %> Likes</p>
-    </div>
-    <h5 class="user-name">
-      Post Title: <%= @post.title %> 
-    </h5>
+        <p><%= @post.comments.count %> comments</p>
+        <p><%= @post.likes.count %> Likes</p>
+      </div>
+      <h5 class="user-name">
+        Post Title: <%= @post.title %> 
+      </h5>
       <p class="user-name">
         Post Text: <%= @post.text %>  
       </p>
+    </div>
   </div>
 
-<div class="col-sm-12 custom-border rounded my-3">
-<h4 class="user-name">Comments (<%= @post.comments.count %> comments):</h4>
-<ul class="list-unstyled">
-  <% if @post.comments.empty? %>
-    <li>No comments yet.</li>
-  <% else %>
-    <% @post.comments.each do |comment| %>
-      <li>
-        <strong><%= comment.user.name %>:</strong> <%= comment.text %>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-sm-12 custom-border rounded my-3">
+    <h4 class="user-name">Recent Comments (<%= @post.comments.count %> comments):</h4>
+    <ul class="list-unstyled">
+      <% if @post.comments.empty? %>
+        <li>No comments yet.</li>
+      <% else %>
+        <% @post.recent_comments.each do |comment| %>
+          <li>
+            <strong><%= comment.user.name %>:</strong> <%= comment.text %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 </div>
