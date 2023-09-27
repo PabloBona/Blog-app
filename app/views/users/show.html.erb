@@ -41,7 +41,7 @@
   <h5 class="user-name">
     Most Recent Posts:
   </h5>
-  <% recent_posts = @user.posts.order(created_at: :desc).limit(3) %>
+  <% recent_posts = @user.recent_posts %>
   <% if recent_posts.any? %>
     <% recent_posts.each do |post| %>
       <div class="col-sm-12 custom-border rounded my-3">
@@ -64,7 +64,6 @@
     <p class="custom-border py-2">No recent posts</p>
   <% end %>
 </div>
-
 
   <div class="row">
     <div class="col">
