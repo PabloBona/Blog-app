@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.user-photo {
+  height: 100px;
+}
+
+.user-photo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

@@ -1,8 +1,65 @@
-  <h1>List of Posts for a Given User</h1>
-  <p>Here is a list of posts for a given user.</p>
-  <ul>
-    <li>Post 1</li>
-    <li>Post 2</li>
-    <li>Post 3</li>
-   </ul>
- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Posts</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="mt-2">User <%= @user_name %> Posts</h1>
+        <p class="lead">Here you can see all the posts by this user.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <% if @posts.empty? %>
+        <div class="col-sm-12 border rounded my-1">
+          <p class="user-name">There are no posts available for this user.</p>
+        </div>
+      <% else %>
+        <% @posts.each do |post| %>
+          <div class="col-sm-12 border rounded my-1">
+              <h5 class="user-name py-3">
+                <%= link_to "Post #{post.id}", user_post_path(@user, post), title: "To Post Details" %>
+              </h5>
+            <h3 class="user-name">
+              <%= post.title %>
+            </h3>
+            <p class="user-name">
+              <%= post.text %>
+            </p>
+          </div>
+
+          <div class="col-sm-12 border rounded mb-5">
+            <h4 class="user-name">Comments:</h4>
+            <% if post.comments.empty? %>
+              <p class="user-name">This post has no comments.</p>
+            <% else %>
+              <% post.comments.each do |comment| %>
+                <p class="user-name">
+                  <%= comment.user.name %>: <%= comment.text %>
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center mb-3">
+          <%= link_to "Back to User Details", user_path(@user), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
