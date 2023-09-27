@@ -37,11 +37,13 @@
     </div>
   </div>
 
-  <div class="row">
-    <h5 class="user-name">
-      Three Most Recent Posts:
-    </h5>
-    <% @user.posts.order(created_at: :desc).limit(3).each do |post| %>
+<div class="row">
+  <h5 class="user-name">
+    Most Recent Posts:
+  </h5>
+  <% recent_posts = @user.posts.order(created_at: :desc).limit(3) %>
+  <% if recent_posts.any? %>
+    <% recent_posts.each do |post| %>
       <div class="col-sm-12 custom-border rounded my-3">
         <h5 class="user-name py-3">
           Post #<%= post.id %>
@@ -58,12 +60,18 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <% else %>
+    <p class="custom-border py-2">No recent posts</p>
+  <% end %>
+</div>
+
 
   <div class="row">
-    <div class="col text-center mb-3">
-      <%= link_to "See all posts", user_posts_path(@user), class: "btn btn-primary" %>
-      <%= link_to "See all users", users_path(@user), class: "btn btn-primary" %>
+    <div class="col">
+      <div class="d-flex justify-content-around my-3 text-center">
+        <%= link_to "See all users", users_path(@user), class: "btn btn-primary" %>
+        <%= link_to "See #{@user.name}'s posts", user_posts_path(@user), class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
