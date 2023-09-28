@@ -5,7 +5,9 @@
       <p class="lead">Here you can see details of the post.</p>
     </div>
   </div>
-
+ 
+<p><%= @post.likes.count %> Likes</p>
+ 
   <div class="row">
     <div class="col-sm-12 custom-border rounded my-1">
       <div class="align-items-baseline d-flex justify-content-between">
@@ -23,7 +25,9 @@
       </p>
     </div>
   </div>
-
+ <div class="d-flex justify-content-center likes">
+ <%= render 'likes/form' %>
+ </div>
 <div class="row">
   <div class="col-sm-12 custom-border rounded my-3">
     <h4 class="user-name">Recent Comments (<%= @post.comments.count %> comments):</h4>
