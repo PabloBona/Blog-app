@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  database: blog_development
+  database: blog_development_copy
   username: postgres
   password: postgres
   host: localhost

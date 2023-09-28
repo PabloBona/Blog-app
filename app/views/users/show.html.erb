@@ -1,50 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>User Details</title>
-</head>
-<body>
-  <h1>User Details</h1>
-  <p>Here you can see user details.</p>
-
- 
-  <div class="user">
-    <div class="user-photo">
-      <img src="placeholder.jpg" alt="User Photo">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="mt-2">User Details</h1>
+      <p class="lead">Here you can see all the users of the blog.</p>
     </div>
-    <div class="user-info">
-      <h5>User Name</h5>
-      <p>Number of posts: X</p>
+  </div>
+  
+  <div class="row">
+    <div class="col align-self-center">
+      <div class="custom-border user-photo">
+        <img class="" src="<%= @user.photo %>" alt="User Photo">
+      </div>
+    </div>
+    <div class="col-sm-10">
+      <div class="d-flex align-items-center h-100 custom-border py-1 px-3">
+        <div class="user-info w-100">
+          <h5 class="user-name">
+             <%= @user.name %> 
+          </h5>
+          <p class="user-posts text-end m-0">
+            <a href="<%= user_posts_path(@user) %>" title="To User Posts">Number of posts: <%= @user.posts_counter %></a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 
- 
-  <div class="user-bio">
-    <h5>User Name Bio</h5>
-    <p>User bio goes here.</p>
-  </div>
-
- 
-  <div class="user-posts">
- 
-    <div class="post">
-      <h5>Post 1</h5>
-      <h3>Post Title 1</h3>
-      <p>Post content goes here.</p>
+  <div class="row">
+    <div class="col-sm-12 custom-border rounded my-3">
+      <h5 class="user-name py-3">
+        <%= @user.name %> Bio
+      </h5>
+      <p class="user-name">
+        <%= @user.bio %>
+      </p>
     </div>
+  </div>
 
- 
-    <div class="post">
-      <h5>Post 2</h5>
-      <h3>Post Title 2</h3>
-      <p>Post content goes here.</p>
+<div class="row">
+  <h5 class="user-name">
+    Most Recent Posts:
+  </h5>
+  <% recent_posts = @user.recent_posts %>
+  <% if recent_posts.any? %>
+    <% recent_posts.each do |post| %>
+      <div class="col-sm-12 custom-border rounded my-3">
+        <h5 class="user-name py-3">
+          Post #<%= post.id %>
+        </h5>
+        <h3 class="user-name">
+          <%= post.title %>
+        </h3>
+        <p class="user-name">
+          <%= post.text %>
+        </p>
+        <div class="text-end">
+          <p><%= post.comments.count %> comments</p>
+          <p><%= post.likes.count %> Likes</p>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="custom-border py-2">No recent posts</p>
+  <% end %>
+</div>
+
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-around my-3 text-center">
+        <%= link_to "See all users", users_path(@user), class: "btn btn-primary" %>
+        <%= link_to "See #{@user.name}'s posts", user_posts_path(@user), class: "btn btn-primary" %>
+      </div>
     </div>
-
- 
   </div>
-
-  <div>
-    <p>See all posts</p>
-  </div>
-</body>
-</html>
+</div>
