@@ -1,0 +1,8 @@
+<%= bootstrap_form_with model: @todo, local: true do |f| %>
+
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.date_field :due_date %>
+  <%= f.submit %>
+
+<% end %>
