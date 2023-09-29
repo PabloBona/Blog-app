@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.build(post_params)
 
     if @post.save
