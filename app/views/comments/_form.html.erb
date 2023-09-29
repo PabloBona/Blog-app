@@ -3,11 +3,11 @@
 <div class="col">
 <%= form_with(model: [@user, @post, @comment], url: user_post_comments_path(@user, @post), method: :post) do |form| %>
   <div class="form-group my-1">
-     <%= form.text_area :text, class: 'form-control' %>
+     <%= form.text_area :text, class: 'bg-body-secondary form-control' %>
   </div>
 
-  <div class="actions my-1 text-center">
-    <%= form.submit 'Add Comment', class: 'btn btn-primary' %>
+  <div class="actions text-center my-2">
+    <%= form.submit 'Add Comment', class: 'btn btn-dark' %>
   </div>
 <% end %>
 </div>

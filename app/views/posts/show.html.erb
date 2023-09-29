@@ -12,12 +12,12 @@
     <div class="col-sm-12 custom-border rounded my-1">
       <div class="align-items-baseline d-flex justify-content-between">
         <h5 class="user-name py-3">
-          <%= link_to "Post #{@post.id}", user_posts_path(user_id: @user.id, id: @post.id), title: "To User Posts" %> by <%= link_to @user.name, user_path(@user), title: "To User Details" %>
+          <%= link_to "Post #{@post.id}", user_posts_path(user_id: @user.id, id: @post.id), title: "To User Posts", class:"unstyled" %> by <%= link_to @user.name, user_path(@user), title: "To User Details", class:"unstyled" %>
         </h5>
         <p><%= @post.comments.count %> comments</p>
         <p><%= @post.likes.count %> Likes</p>
       </div>
-      <h5 class="user-name">
+      <h5 class="fs-2 user-name">
         Post Title: <%= @post.title %> 
       </h5>
       <p class="user-name">
@@ -25,7 +25,7 @@
       </p>
     </div>
   </div>
- <div class="d-flex justify-content-center likes">
+ <div class="d-flex justify-content-center likes my-2">
  <%= render 'likes/form' %>
  </div>
  <div class="d-flex justify-content-center likes">
@@ -47,4 +47,7 @@
     </ul>
   </div>
 </div>
+      <div class="d-flex justify-content-around my-3 text-center">
+        <%= link_to "Back to all users", users_path(@user), class: "btn btn-dark" %>
+      </div>
 </div>

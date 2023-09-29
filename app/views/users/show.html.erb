@@ -7,19 +7,19 @@
   </div>
   
   <div class="row">
-    <div class="col align-self-center">
-      <div class="custom-border user-photo">
-        <img class="" src="<%= @user.photo %>" alt="User Photo">
+    <div class="col-12 col-sm-3 col-md-2 col-lg-2 col-xl-2 d-none d-sm-block">
+      <div class=" user-photo">
+        <img class="pic-shadow" src="<%= @user.photo %>" alt="User Photo">
       </div>
     </div>
-    <div class="col-sm-10">
+    <div class="col-12 col-sm-9 col-md-10 col-lg-10 col-xl-10">
       <div class="d-flex align-items-center h-100 custom-border py-1 px-3">
         <div class="user-info w-100">
-          <h5 class="user-name">
+          <h5 class="unstyled user-name">
              <%= @user.name %> 
           </h5>
           <p class="user-posts text-end m-0">
-            <a href="<%= user_posts_path(@user) %>" title="To User Posts">Number of posts: <%= @user.posts_counter %></a>
+            <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">Number of posts: <%= @user.posts_counter %></a>
           </p>
         </div>
       </div>
@@ -68,8 +68,8 @@
   <div class="row">
     <div class="col">
       <div class="d-flex justify-content-around my-3 text-center">
-        <%= link_to "See all users", users_path(@user), class: "btn btn-primary" %>
-        <%= link_to "See #{@user.name}'s posts", user_posts_path(@user), class: "btn btn-primary" %>
+        <%= link_to "See all users", users_path(@user), class: "btn btn-dark" %>
+        <%= link_to "See #{@user.name}'s posts", user_posts_path(@user), class: "btn btn-dark" %>
       </div>
     </div>
   </div>
