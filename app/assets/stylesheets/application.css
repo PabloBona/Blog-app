@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.body-blog {
+  background-color: #f0eeec;
+}
+
 .user-photo {
   width: 100px;
   height: 100px;
