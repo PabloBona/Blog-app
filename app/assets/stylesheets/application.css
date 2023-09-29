@@ -13,14 +13,9 @@
  *= require_tree .
  *= require_self
  */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600&family=Roboto:wght@400;700&family=Yanone+Kaffeesatz:wght@700&display=swap');
-
-* {
-  font-family: bodoni, serif;
-}
 
 .body-blog {
-  background-color: #ebdac5;
+  background-color: #f0eeec;
 }
 
 .user-photo {

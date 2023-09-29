@@ -3,7 +3,7 @@
 <div class="col">
 <%= form_with(model: [@user, @post, @comment], url: user_post_comments_path(@user, @post), method: :post) do |form| %>
   <div class="form-group my-1">
-     <%= form.text_area :text, class: 'bg-body-secondary border-black form-control' %>
+     <%= form.text_area :text, class: 'border-black form-control' %>
   </div>
 
   <div class="actions text-center my-2">
