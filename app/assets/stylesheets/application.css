@@ -48,7 +48,9 @@
 }
 
 .pic-shadow {
-  box-shadow: rgba(112, 94, 161, 0.35) 10px 5px 15px;
+  box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
+  -webkit-box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
+  -moz-box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
   border: 2px solid #8a6593;
 }
 
