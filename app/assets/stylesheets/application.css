@@ -13,22 +13,54 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600&family=Roboto:wght@400;700&family=Yanone+Kaffeesatz:wght@700&display=swap');
+
+* {
+  font-family: bodoni, serif;
+}
+
 .body-blog {
-  background-color: #faf6f6;
+  background-color: #ebdac5;
 }
 
 .user-photo {
+  width: 100px;
   height: 100px;
+  background-size: cover;
+  background-position: center;
 }
 
 .user-photo img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 50%;
 }
 
 .custom-border {
-  border: 1px solid #2a024b;
+  border: 2px solid #643191;
   border-radius: 2%;
-  box-shadow: rgba(0, 0, 0, 0.35) 10px 5px 15px;
+  box-shadow: rgba(112, 94, 161, 0.35) 10px 5px 15px;
+}
+
+.user-info {
+  padding-left: 20px;
+}
+
+.pic-shadow {
+  box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
+  -webkit-box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
+  -moz-box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
+  border: 2px solid #8a6593;
+}
+
+.unstyled {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #9f39f8;
+}
+
+.unstyled:hover {
+  color: #ea03ff;
 }
