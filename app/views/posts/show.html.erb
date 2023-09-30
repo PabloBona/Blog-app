@@ -6,16 +6,14 @@
     </div>
   </div>
  
-<p><%= @post.likes.count %> Likes</p>
- 
   <div class="row">
     <div class="col-sm-12 custom-border rounded my-1">
       <div class="align-items-baseline d-flex justify-content-between">
         <h5 class="user-name py-3">
           <%= link_to "Post #{@post.id}", user_posts_path(user_id: @user.id, id: @post.id), title: "To User Posts", class:"unstyled" %> by <%= link_to @user.name, user_path(@user), title: "To User Details", class:"unstyled" %>
         </h5>
-        <p><%= @post.comments.count %> comments</p>
-        <p><%= @post.likes.count %> Likes</p>
+        <p>Number of Comments: <%= @post.comments.count %></p>
+        <p>Number of Likes: <%= @post.likes.count %></p>
       </div>
       <h5 class="fs-2 user-name">
         Post Title: <%= @post.title %> 
