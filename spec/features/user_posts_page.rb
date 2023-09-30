@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.feature 'User Post Index Page', type: :feature do
   before do
-    # Creo un usuario para probar
+    # Create a user for testing
     @user = User.create(name: 'User 1', photo: 'url1', bio: 'Bio 1', posts_counter: 3)
 
-    # Creo algunas publicaciones para el usuario
+    # Create some posts for the user
     @post1 = @user.posts.create(title: 'Post 1', text: 'Text 1')
     @post2 = @user.posts.create(title: 'Post 2', text: 'Text 2')
     @post3 = @user.posts.create(title: 'Post 3', text: 'Text 3')
 
-    # Crreo algunos comentarios y me gusta para las publicaciones
+    # Create some comments and likes for the posts
     @comment1 = @post1.comments.create(user: @user, text: 'Comment of Post 1')
     @comment2 = @post2.comments.create(user: @user, text: 'Comment of Post 2')
     @comment3 = @post3.comments.create(user: @user, text: 'Comment of Post 3')
@@ -61,13 +61,22 @@ RSpec.feature 'User Post Index Page', type: :feature do
   scenario 'When I click on a post, it redirects me to that post\'s show page' do
     visit user_posts_path(@user)
 
-    click_link 'Post 1'
-    expect(page).to have_current_path(post_path(@post1))
+    # Find and click on the link in the first post
+    first('.user-name a.unstyled').click
+    expect(page).to have_current_path(user_post_path(user_id: @user.id, id: @post1.id))
 
-    click_link 'Post 2'
-    expect(page).to have_current_path(post_path(@post2))
+    # Return to the user's posts page
+    visit user_posts_path(@user)
 
-    click_link 'Post 3'
-    expect(page).to have_current_path(post_path(@post3))
+    # Find and click on the link in the second post
+    all('.user-name a.unstyled')[1].click
+    expect(page).to have_current_path(user_post_path(user_id: @user.id, id: @post2.id))
+
+    # Return to the user's posts page
+    visit user_posts_path(@user)
+
+    # Find and click on the link in the third post
+    all('.user-name a.unstyled')[2].click
+    expect(page).to have_current_path(user_post_path(user_id: @user.id, id: @post3.id))
   end
 end
