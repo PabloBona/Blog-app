@@ -6,7 +6,7 @@
     </div>
   </div>
 
-    <div class="row">
+  <div class="row">
     <div class="col-12 col-sm-3 col-md-2 col-lg-2 col-xl-2 d-none d-sm-block">
       <div class=" user-photo">
         <img class="pic-shadow" src="<%= @user.photo %>" alt="User Photo">
@@ -16,7 +16,7 @@
       <div class="d-flex align-items-center h-100 custom-border py-1 px-3">
         <div class="user-info w-100">
           <h5 class="unstyled user-name">
-             <%= @user.name %> 
+            <%= @user.name %> 
           </h5>
           <p class="user-posts text-end m-0">
             <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">Number of posts: <%= @user.posts_counter %></a>
@@ -25,9 +25,11 @@
       </div>
     </div>
   </div>
+
   <div class="text-center">
     <%= link_to 'New Post', new_user_post_path(@user), class: 'btn btn-dark my-2 text-center' %>
   </div>
+
   <div class="row">
     <% if @posts.empty? %>
       <div class="col-sm-12 custom-border rounded my-1">
@@ -36,14 +38,14 @@
     <% else %>
       <% @posts.each do |post| %>
         <div class="col-sm-12 custom-border rounded my-1">
-            <h5 class="user-name py-3">
-              <%= link_to "Post #{post.id}", user_post_path(user_id: @user.id, id: post.id), title: "To Post Details", class:"unstyled"%>
-            </h5>
+          <h5 class="user-name py-3">
+            <%= link_to "Post #{post.id}", user_post_path(user_id: @user.id, id: post.id), title: "To Post Details", class:"unstyled"%>
+          </h5>
           <h3 class="user-name">
-            <%= post.title %>
+            <%= "Post #{post.id} - #{post.title}" %>
           </h3>
           <p class="user-name">
-            <%= post.text %>
+            <%= "Text #{post.id} - #{post.text}" %>
           </p>
         </div>
 
@@ -54,9 +56,14 @@
           <% else %>
             <% post.comments.each do |comment| %>
               <p class="user-name">
+                <%= "Comment of Post #{comment.id}" %>
                 <%= comment.user.name %>: <%= comment.text %>
               </p>
             <% end %>
+              <div class="fst-italic text-end">
+                <p class="user-name">Number of Comments: <%= post.comments.size %></p>
+                <p class="user-name">Number of Likes: <%= post.likes.size %></p>
+              </div>
           <% end %>
         </div>
       <% end %>
@@ -67,11 +74,15 @@
 <div>
   <div class="container">
     <div class="row">
-      <div class="col text-center mb-3">
+      <div class="col-12 text-center mb-3">
         <%= link_to "Back to User Details", user_path(@user), class: "btn btn-dark" %>
+      </div>
+      <div class="col-12 text-center mb-3 custom-pagination">
+        <%= paginate @posts  %>
       </div>
     </div>
   </div>
+  <div class="row justify-content-center">
+
+  </div>
 </div>
-
-
