@@ -14,13 +14,16 @@
  *= require_self
  */
 
-.body-blog {
-  background-color: #f0eeec;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .user-photo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background-size: cover;
   background-position: center;
 }
@@ -30,12 +33,26 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  padding: 3px;
+  background: rgba(0, 0, 0, 0.75);
+  border: none;
+}
+
+.user-photo img:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
 }
 
 .custom-border {
-  border: 2px solid #643191;
-  border-radius: 2%;
-  box-shadow: rgba(112, 94, 161, 0.35) 10px 5px 15px;
+  border: 1px solid #643191;
+  border-radius: 56px;
+  box-shadow: rgba(96, 94, 102, 0.35) 10px 5px 15px;
+}
+
+.custom-border:hover {
+  transform: scale(1.01);
+  transition: all 0.5s ease;
+  background-color: #fbf6ff;
 }
 
 .user-info {
@@ -43,17 +60,15 @@
 }
 
 .pic-shadow {
-  box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
-  -webkit-box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
-  -moz-box-shadow: 1px 1px 12px 6px rgba(61, 42, 60, 0.63);
-  border: 2px solid #8a6593;
+  box-shadow: -10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -10px 10px 5px 0 rgba(0, 0, 0, 0.75);
 }
 
 .unstyled {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #9f39f8;
 }
 
 .unstyled:hover {
@@ -65,4 +80,10 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+}
+
+@media screen and (min-width: 992px) {
+  .custom-border:hover {
+    transform: scale(1.1);
+  }
 }

@@ -14,7 +14,7 @@ RSpec.feature 'Post Show Page', type: :feature do
     end
   end
 
-  scenario 'I can see post details' do
+  scenario 'I can see post details(title, author, numbers of comment&likes, body, commenter usernames)' do
     visit user_post_path(user_id: @user.id, id: @post.id)
 
     # Verify that the post title is displayed

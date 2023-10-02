@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'User Index Page', type: :feature do
   before do
-    # Crea algunos usuarios para probar
+    # Create two users
     @user1 = User.create(name: 'User 1', photo: 'url1', bio: 'Bio 1', posts_counter: 3)
     @user2 = User.create(name: 'User 2', photo: 'url2', bio: 'Bio 2', posts_counter: 5)
   end

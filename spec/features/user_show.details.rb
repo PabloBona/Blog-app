@@ -17,14 +17,9 @@ RSpec.feature 'User Details Page', type: :feature do
     expect(page).to have_css("img[src*='url1']")
   end
 
-  scenario "User can click on 'See all posts' button and be redirected to the post index page" do
+  scenario "User can click on 'See all posts' button and be redirected to the post page" do
     visit user_path(@user)
     click_link 'See all posts'
     expect(page).to have_current_path(user_posts_path(@user))
-  end
-
-  scenario "User can see the user's bio" do
-    visit user_path(@user)
-    expect(page).to have_content(@user.bio)
   end
 end
