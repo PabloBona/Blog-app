@@ -14,12 +14,13 @@
     </div>
     <div class="col-12 col-sm-9 col-md-10 col-lg-10 col-xl-10">
       <div class="d-flex align-items-center h-100 custom-border py-1 px-3">
-        <div class="user-info w-100">
+        <div class="p-3 user-info w-100">
           <h5 class="unstyled user-name">
              <%= @user.name %> 
           </h5>
           <p class="user-posts text-end m-0">
-            <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">Number of posts: <%= @user.posts_counter %></a>
+            <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">Number of posts: <%= @user.posts_counter %></a> <br>
+            <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">See all post: <%= @user.posts_counter %></a>
           </p>
         </div>
       </div>
@@ -69,7 +70,7 @@
     <div class="col">
       <div class="d-flex justify-content-around my-3 text-center">
         <%= link_to "See all users", users_path(@user), class: "btn btn-dark" %>
-        <%= link_to "See #{@user.name}'s posts", user_posts_path(@user), class: "btn btn-dark" %>
+        <%= link_to "See all posts", user_posts_path(@user), class: "btn btn-dark all-post" %>
       </div>
     </div>
   </div>
