@@ -4,7 +4,8 @@ first_user = User.create!(
   password: "password123",
   photo: "https://i.pravatar.cc/150?img=1",
   bio: "Dedicated educator with a passion for fostering learning...",
-  posts_counter: 0
+  posts_counter: 0,
+  confirmed_at: Time.now
 )
 
 second_user = User.create!(
@@ -13,7 +14,8 @@ second_user = User.create!(
   password: "password123",
   photo: "https://i.pravatar.cc/150?img=2",   
   bio: "Experienced professional striving for excellence in every endeavor...",
-  posts_counter: 0
+  posts_counter: 0,
+  confirmed_at: Time.now
 )
 
 third_user = User.create!(
@@ -22,7 +24,8 @@ third_user = User.create!(
   password: "password123",
   photo: "https://i.pravatar.cc/150?img=5",
   bio: "Passionate creative exploring the world through art and imagination...",
-  posts_counter: 0
+  posts_counter: 0,
+  confirmed_at: Time.now
 )
 
 fourth_user = User.create!(
@@ -31,7 +34,8 @@ fourth_user = User.create!(
   password: "password123",
   photo: "https://i.pravatar.cc/150?img=4",
   bio: "Curious learner seeking knowledge and inspiration in every moment...",
-  posts_counter: 0
+  posts_counter: 0,
+  confirmed_at: Time.now
 )
 # User 1 Post
 first_post = Post.create(author_id: 1, title: 'My First Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis mi in urna eleifend vehicula sit amet a mauris. Proin eget lacus sit amet velit aliquet dictum.', comments_counter: 0, likes_counter: 0)
