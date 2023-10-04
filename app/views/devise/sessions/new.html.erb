@@ -1,31 +1,25 @@
-<h2>Log in</h2>
+<div class="container mt-5">
   <% if notice %>
-      <P class="notice"><%= notice%></p>
+    <p class="notice"><%= notice%></p>
   <% end %>
   <% if alert %>
-      <P class="alert"><%= alert%></p>
+    <p class="alert"><%= alert%></p>
   <% end %>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "needs-validation" }, autocomplete: "off" ) do |f| %>
+    <div class="mb-3">
+      <%= f.email_field :email, placeholder: "Email address" , class: "form-control" , autofocus: true, required: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="mb-3">
+      <%= f.password_field :password, placeholder: "Password" , class: "form-control" , autocomplete: "current-password" , required: true %>
+    </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="mb-3">
+      <%= f.submit "Log in" , class: "border btn btn-light w-100" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= link_to "Log in" , new_user_session_path %> |
+  <%= link_to "Sign up" , new_user_registration_path %> |
+  <%= link_to "Forgot your password?" , new_user_password_path %>
+</div>
