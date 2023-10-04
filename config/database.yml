@@ -5,24 +5,10 @@ default: &default
 
 development:
   <<: *default
-  database: blog_development
+  database: blog_development_dev
   username: postgres
   password: postgres
   host: localhost
   port: 5432
 
-test:
-  <<: *default
-  database: blog_test
-  username: postgres
-  password: postgres
-  host: localhost
-  port: 5432
-
-production:
-  <<: *default
-  database: blog_production_rd
-  username: postgres
-  password: postgres
-  host: localhost
-  port: 5432
+ 

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: :user_id
   has_many :likes, foreign_key: :user_id
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
   # Validaciones
   validates :name, presence: true

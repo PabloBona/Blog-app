@@ -1,42 +1,36 @@
-## Users information
 first_user = User.create!(
-  name: "Ethan Johnson",
-  email: "hola@example.com",  # Asigna un correo electrónico válido aquí
-  password: "password123",       # Asigna una contraseña válida aquí
-  photo: "https://i.postimg.cc/gctvJHWH/Screenshot-2023-07-1...",
-  bio: "Dedicated Mexican educator with a passion for fost...",
+  name: "Alice Johnson",
+  email: "alice.johnson@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=1",
+  bio: "Dedicated educator with a passion for fostering learning...",
   posts_counter: 0
 )
-first_user = User.create!(
-  name: "Ethana Johnson",
-  email: "pepe@example.com",  # Asigna un correo electrónico válido aquí
-  password: "password123",       # Asigna una contraseña válida aquí
-  photo: "https://i.postimg.cc/gctvJHWH/Screenshot-2023-07-1...",
-  bio: "Dedicated Mexican educator with a passion for fost...",
-  posts_counter: 0
-)
+
 second_user = User.create!(
-  name: "Ethane Johnson",
-  email: "juan@example.com",  # Asigna un correo electrónico válido aquí
-  password: "password123",       # Asigna una contraseña válida aquí
-  photo: "https://i.postimg.cc/gctvJHWH/Screenshot-2023-07-1...",
-  bio: "Dedicated Mexican educator with a passion for fost...",
+  name: "Bob Smith",
+  email: "bob.smith@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=2",   
+  bio: "Experienced professional striving for excellence in every endeavor...",
   posts_counter: 0
 )
+
 third_user = User.create!(
-  name: "Ethano Johnson",
-  email: "asd@example.com",  # Asigna un correo electrónico válido aquí
-  password: "password123",       # Asigna una contraseña válida aquí
-  photo: "https://i.postimg.cc/gctvJHWH/Screenshot-2023-07-1...",
-  bio: "Dedicated Mexican educator with a passion for fost...",
+  name: "Emma Davis",
+  email: "emma.davis@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=5",
+  bio: "Passionate creative exploring the world through art and imagination...",
   posts_counter: 0
 )
+
 fourth_user = User.create!(
-  name: "Ethanu Johnson",
-  email: "exaasddasdasadsadsadsdasmple4@example.com",  # Asigna un correo electrónico válido aquí
-  password: "password123",       # Asigna una contraseña válida aquí
-  photo: "https://i.postimg.cc/gctvJHWH/Screenshot-2023-07-1...",
-  bio: "Dedicated Mexican educator with a passion for fost...",
+  name: "David Wilson",
+  email: "david.wilson@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=4",
+  bio: "Curious learner seeking knowledge and inspiration in every moment...",
   posts_counter: 0
 )
 # User 1 Post
@@ -73,32 +67,32 @@ Post.create(author_id: 4, title: 'My Fourth Post', text: 'Lorem ipsum dolor sit 
 Post.create(author_id: 4, title: 'My Fifth Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
 Post.create(author_id: 4, title: 'My Sixth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
 
-# # Post Comments User 1
-# Comment.create(author_id: 1, post_id: 8, text: 'This is my first comment')
-# Comment.create(author_id: 1, post_id: 13, text: 'This is my second comment')
-# Comment.create(author_id: 1, post_id: 20, text: 'This is my third comment')
-# Comment.create(author_id: 1, post_id: 26, text: 'This is my fourth comment')
-# Comment.create(author_id: 1, post_id: 8, text: 'This is my fifth comment')
-# Comment.create(author_id: 1, post_id: 13, text: 'This is my sixth comment')
-# Comment.create(author_id: 1, post_id: 20, text: 'This is my seventh comment')
-# Comment.create(author_id: 1, post_id: 26, text: 'This is my eigth comment')
+# Post Comments User 1
+Comment.create(user_id: 1, post_id: 8, text: 'This is my first comment')
+Comment.create(user_id: 1, post_id: 13, text: 'This is my second comment')
+Comment.create(user_id: 1, post_id: 20, text: 'This is my third comment')
+Comment.create(user_id: 1, post_id: 26, text: 'This is my fourth comment')
+Comment.create(user_id: 1, post_id: 8, text: 'This is my fifth comment')
+Comment.create(user_id: 1, post_id: 13, text: 'This is my sixth comment')
+Comment.create(user_id: 1, post_id: 20, text: 'This is my seventh comment')
+Comment.create(user_id: 1, post_id: 26, text: 'This is my eigth comment')
 
-# # Post Comments User 2
-# Comment.create(author_id: 2, post_id: 8, text: 'This is my first comment')
-# Comment.create(author_id: 2, post_id: 13, text: 'This is my second comment')
-# Comment.create(author_id: 2, post_id: 20, text: 'This is my third comment')
-# Comment.create(author_id: 2, post_id: 26, text: 'This is my fourth comment')
-# Comment.create(author_id: 2, post_id: 8, text: 'This is my fifth comment')
-# Comment.create(author_id: 2, post_id: 13, text: 'This is my sixth comment')
-# Comment.create(author_id: 2, post_id: 20, text: 'This is my seventh comment')
-# Comment.create(author_id: 2, post_id: 26, text: 'This is my eigth comment')
+# Post Comments User 2
+Comment.create(user_id: 2, post_id: 8, text: 'This is my first comment')
+Comment.create(user_id: 2, post_id: 13, text: 'This is my second comment')
+Comment.create(user_id: 2, post_id: 20, text: 'This is my third comment')
+Comment.create(user_id: 2, post_id: 26, text: 'This is my fourth comment')
+Comment.create(user_id: 2, post_id: 8, text: 'This is my fifth comment')
+Comment.create(user_id: 2, post_id: 13, text: 'This is my sixth comment')
+Comment.create(user_id: 2, post_id: 20, text: 'This is my seventh comment')
+Comment.create(user_id: 2, post_id: 26, text: 'This is my eigth comment')
 
-# # Post Comments User 3
-# Comment.create(author_id: 3, post_id: 8, text: 'This is my first comment')
-# Comment.create(author_id: 3, post_id: 13, text: 'This is my second comment')
-# Comment.create(author_id: 3, post_id: 20, text: 'This is my third comment')
-# Comment.create(author_id: 3, post_id: 26, text: 'This is my fourth comment')
-# Comment.create(author_id: 3, post_id: 8, text: 'This is my fifth comment')
-# Comment.create(author_id: 3, post_id: 13, text: 'This is my sixth comment')
-# Comment.create(author_id: 3, post_id: 20, text: 'This is my seventh comment')
-# Comment.create(author_id: 3, post_id: 26, text: 'This is my eigth comment')
+# Post Comments User 3
+Comment.create(user_id: 3, post_id: 8, text: 'This is my first comment')
+Comment.create(user_id: 3, post_id: 13, text: 'This is my second comment')
+Comment.create(user_id: 3, post_id: 20, text: 'This is my third comment')
+Comment.create(user_id: 3, post_id: 26, text: 'This is my fourth comment')
+Comment.create(user_id: 3, post_id: 8, text: 'This is my fifth comment')
+Comment.create(user_id: 3, post_id: 13, text: 'This is my sixth comment')
+Comment.create(user_id: 3, post_id: 20, text: 'This is my seventh comment')
+Comment.create(user_id: 3, post_id: 26, text: 'This is my eigth comment')
