@@ -4,7 +4,7 @@
       <h1 class="mt-2">User Details</h1>
       <p class="lead">Here you can see all the users of the blog.</p>
     </div>
-  </div>
+  </div>  
   
   <div class="row">
     <div class="col-12 col-sm-3 col-md-2 col-lg-2 col-xl-2 d-none d-sm-block">
@@ -20,7 +20,7 @@
           </h5>
           <p class="user-posts text-end m-0">
             <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">Number of posts: <%= @user.posts_counter %></a> <br>
-            <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">See all post: <%= @user.posts_counter %></a>
+            <a href="<%= user_posts_path(@user) %>" title="To User Posts" class="unstyled">Create New Post</a>
           </p>
         </div>
       </div>

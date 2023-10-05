@@ -24,8 +24,13 @@
     </div>
   </div>
  <div class="d-flex justify-content-center likes my-2">
- <%= render 'likes/form' %>
- </div>
+<div class="col-12 text-center d-flex justify-content-center">
+  <% if user_signed_in? && can?(:destroy, @post) %>
+    <%= button_to 'Like', user_post_likes_path(@post.author, @post), method: :post, class: "btn btn-dark mx-1" %>
+    <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete, class: "btn btn-danger mx-1" %>
+  <% end %>
+</div>
+ </div> 
  <div class="d-flex justify-content-center likes">
    <%= render 'comments/form' %>
  </div>
