@@ -104,6 +104,13 @@ rails server
 Open your web browser and go to http://localhost:3000 to access the Blog App.
 
 ## 👥 Authors <a name="authors"></a>
+
+👤 **Ruth Abreu**
+
+- GitHub: [@Ruthmy](https://github.com/Ruthmy)
+- Twitter [@rury_exe](https://twitter.com/rury_exe)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/ruth-abreu)
+
 👤 Pablo Bonasera
 - Github: [@PabloBona](https://github.com/PabloBona)
 - Linkedin: [Pablo Bonasera](https://www.linkedin.com/in/pablo-bonasera/)

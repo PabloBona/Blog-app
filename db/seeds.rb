@@ -1,43 +1,102 @@
-# frozen_string_literal: true
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-first_user = User.create('name' => 'Linda Johnson', 'photo' => 'https://i.pravatar.cc/150?img=45', 'bio' => 'Linda is a prominent scientist in the field of biotechnology. Born in New York in 1980, Ana showed exceptional talent from a young age. She completed her Ph.D. in Molecular Genetics at the age of 25 and has since been a trailblazer in researching gene therapies for rare diseases. Her commitment to gender equity in science has led her to spearhead mentorship programs for young women in STEM.')
-second_user = User.create('name' => 'Ana Garcia', 'photo' => 'https://i.pravatar.cc/150?img=21', 'bio' => 'Ana is a renowned Spanish architect born in Barcelona in 1975. Her passion for sustainable architecture has led her to design iconic buildings that combine modern aesthetics with eco-efficiency. Maria has received numerous awards for her work and is a passionate advocate for revitalizing urban spaces through sustainable design.')
-third_user = User.create('name' => 'George Chang', 'photo' => 'https://i.pravatar.cc/150?img=18', 'bio' => 'George is a chef and culinary entrepreneur hailing from South Korea. Born in Seoul in 1981, Chang moved to New York in his teens and revolutionized the culinary scene with his restaurant, Momofuku. His innovative approach to cuisine blends traditional techniques with global influences, earning multiple Michelin stars and transforming how we perceive Asian food.')
-fourth_user = User.create('name' => 'Ringo Perez', 'photo' => 'https://i.pravatar.cc/150?img=11', 'bio' => 'Ringo is a successful Argentinean entrepreneur born in Buenos Aires in 1970. He began his career as a tech entrepreneur in the 1990s and founded several market-leading technology companies. His strategic vision and leadership have made him a stalwart in the international tech industry. Additionally, he is known for his commitment to corporate social responsibility and philanthropy.')
+first_user = User.create!(
+  name: "Alice Johnson",
+  email: "alice.johnson@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=1",
+  bio: "Dedicated educator with a passion for fostering learning...",
+  posts_counter: 0,
+  confirmed_at: Time.now
+)
 
-# Posts de Linda Johnson
-first_post = Post.create(author: first_user, title: 'The Future of Gene Therapies', text: 'Linda Johnson explores the promising future of gene therapies in treating rare diseases. Her expertise in molecular genetics shines light on the groundbreaking advancements in this field. #Biotechnology #Genetics #Innovation')
-fifth_post = Post.create(author: first_user, title: 'Empowering Women in STEM', text: 'In her latest post, Linda Johnson discusses her passion for empowering young women in STEM fields. She shares insights from her mentorship programs and advocates for gender equality in scientific research. #WomenInSTEM #Mentorship #GenderEquity')
-sixth_post = Post.create(author: first_user, title: 'Cracking the Genetic Code', text: 'Linda Johnson delves into the intricacies of genetic codes, unraveling the mysteries that scientists are uncovering. Join her in this fascinating journey through the building blocks of life. #Genetics #DNA #ScienceExploration')
+second_user = User.create!(
+  name: "Bob Smith",
+  email: "bob.smith@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=2",   
+  bio: "Experienced professional striving for excellence in every endeavor...",
+  posts_counter: 0,
+  confirmed_at: Time.now
+)
 
-# Posts de Ana Garcia
-second_post = Post.create(author: second_user, title: 'Sustainable Urban Architecture', text: 'Ana Garcia showcases her award-winning sustainable architectural designs. Through her innovative creations, she transforms urban spaces into eco-efficient marvels, proving that beauty and sustainability can coexist. #SustainableArchitecture #UrbanDesign #Innovation')
-seventh_post = Post.create(author: second_user, title: 'Preserving Cultural Heritage through Architecture', text: 'In this post, Ana Garcia explores the intersection of culture and architecture. She discusses how preserving cultural heritage is essential in her architectural designs, creating spaces that honor the past while embracing the future. #CulturalHeritage #Architecture #Design')
+third_user = User.create!(
+  name: "Emma Davis",
+  email: "emma.davis@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=5",
+  bio: "Passionate creative exploring the world through art and imagination...",
+  posts_counter: 0,
+  confirmed_at: Time.now
+)
 
-# Posts de George Chang
-third_post = Post.create(author: third_user, title: 'Global Flavors, Local Passion', text: 'George Chang takes you on a culinary journey around the world. Discover the rich tapestry of flavors and aromas that define his innovative approach to cuisine. Join him in savoring the essence of diverse cultures on a plate. #CulinaryExploration #GlobalCuisine #Innovation')
-eighth_post = Post.create(author: third_user, title: 'The Art of Fusion Cooking', text: 'In this post, George Chang explores the art of fusion cooking, blending traditional techniques with global influences. Experience the harmonious marriage of flavors as he creates culinary masterpieces that bridge the gap between cultures. #FusionCooking #CulinaryArt #Innovation')
+fourth_user = User.create!(
+  name: "David Wilson",
+  email: "david.wilson@gmail.com",
+  password: "password123",
+  photo: "https://i.pravatar.cc/150?img=4",
+  bio: "Curious learner seeking knowledge and inspiration in every moment...",
+  posts_counter: 0,
+  confirmed_at: Time.now
+)
+# User 1 Post
+first_post = Post.create(author_id: 1, title: 'My First Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis mi in urna eleifend vehicula sit amet a mauris. Proin eget lacus sit amet velit aliquet dictum.', comments_counter: 0, likes_counter: 0)
+second_post = Post.create(author_id: 1, title: 'My Second Post', text: 'Nulla facilisi. Phasellus interdum turpis id est ultrices, ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+third_post = Post.create(author_id: 1, title: 'My Third Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+fourth_post = Post.create(author_id: 1, title: 'My Fourth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0) 
+Post.create(author_id: 1, title: 'My Fifth Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 1, title: 'My Sixth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 1, title: 'My Seventh Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 1, title: 'My Eigth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
 
-# Posts de Ringo Perez
-fourth_post = Post.create(author: fourth_user, title: 'Innovation in Tech Entrepreneurship', text: 'Ringo Perez reflects on the evolving landscape of tech entrepreneurship. With a keen eye for innovation and strategic vision, he discusses the latest trends shaping the industry. Join him in exploring the future of technology. #TechInnovation #Entrepreneurship #FutureTech')
-nineth_post = Post.create(author: fourth_user, title: 'Corporate Social Responsibility: A Vision for Change', text: 'In this post, Ringo Perez shares his insights on corporate social responsibility. He discusses the importance of businesses giving back to society and how philanthropy can be a driving force for positive change. #CSR #Philanthropy #SocialChange')
+# User 2 Post
+Post.create(author_id: 2, title: 'My First Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis mi in urna eleifend vehicula sit amet a mauris. Proin eget lacus sit amet velit aliquet dictum.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 2, title: 'My Second Post', text: 'Nulla facilisi. Phasellus interdum turpis id est ultrices, ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 2, title: 'My Third Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 2, title: 'My Fourth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 2, title: 'My Fifth Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
 
+# User 3 Post
+Post.create(author_id: 3, title: 'My First Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis mi in urna eleifend vehicula sit amet a mauris. Proin eget lacus sit amet velit aliquet dictum.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 3, title: 'My Second Post', text: 'Nulla facilisi. Phasellus interdum turpis id est ultrices, ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 3, title: 'My Third Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 3, title: 'My Fourth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 3, title: 'My Fifth Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 3, title: 'My Sixth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 3, title: 'My Seventh Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
 
-# Comentarios para los posts
-first_comment = Comment.create(user: first_user, post: second_post, text: 'This is the text of comment 1')
-second_comment = Comment.create(user: second_user, post: third_post, text: 'This is the text of comment 2')
-third_comment = Comment.create(user: third_user, post: first_post, text: 'This is the text of comment 3')
-fourth_comment = Comment.create(user: fourth_user, post: first_post, text: 'This is the text of comment 4')
-fifth_comment = Comment.create(user: first_user, post: second_post, text: 'This is the text of comment 5')
-sixth_comment = Comment.create(user: second_user, post: third_post, text: 'This is the text of comment 6')
+# User 4 Post
+Post.create(author_id: 4, title: 'My First Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis mi in urna eleifend vehicula sit amet a mauris. Proin eget lacus sit amet velit aliquet dictum.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 4, title: 'My Second Post', text: 'Nulla facilisi. Phasellus interdum turpis id est ultrices, ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 4, title: 'My Third Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 4, title: 'My Fourth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 4, title: 'My Fifth Post', text: 'Sed sed venenatis nibh. Aenean elementum dolor a purus vehicula, quis faucibus ipsum scelerisque. Cras aliquam facilisis odio, at dignissim lorem varius vel.', comments_counter: 0, likes_counter: 0)
+Post.create(author_id: 4, title: 'My Sixth Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.ac tincidunt est aliquam. Suspendisse potenti. Fusce eget varius odio, a aliquam odio.', comments_counter: 0, likes_counter: 0)
 
-first_like = Like.create(user: first_user, post: third_post)
-second_like = Like.create(user: second_user, post: first_post)
-third_like = Like.create(user: third_user, post: second_post)
-fourth_like = Like.create(user: fourth_user, post: fourth_post)
+# Post Comments User 1
+Comment.create(user_id: 1, post_id: 8, text: 'This is my first comment')
+Comment.create(user_id: 1, post_id: 13, text: 'This is my second comment')
+Comment.create(user_id: 1, post_id: 20, text: 'This is my third comment')
+Comment.create(user_id: 1, post_id: 26, text: 'This is my fourth comment')
+Comment.create(user_id: 1, post_id: 8, text: 'This is my fifth comment')
+Comment.create(user_id: 1, post_id: 13, text: 'This is my sixth comment')
+Comment.create(user_id: 1, post_id: 20, text: 'This is my seventh comment')
+Comment.create(user_id: 1, post_id: 26, text: 'This is my eigth comment')
+
+# Post Comments User 2
+Comment.create(user_id: 2, post_id: 8, text: 'This is my first comment')
+Comment.create(user_id: 2, post_id: 13, text: 'This is my second comment')
+Comment.create(user_id: 2, post_id: 20, text: 'This is my third comment')
+Comment.create(user_id: 2, post_id: 26, text: 'This is my fourth comment')
+Comment.create(user_id: 2, post_id: 8, text: 'This is my fifth comment')
+Comment.create(user_id: 2, post_id: 13, text: 'This is my sixth comment')
+Comment.create(user_id: 2, post_id: 20, text: 'This is my seventh comment')
+Comment.create(user_id: 2, post_id: 26, text: 'This is my eigth comment')
+
+# Post Comments User 3
+Comment.create(user_id: 3, post_id: 8, text: 'This is my first comment')
+Comment.create(user_id: 3, post_id: 13, text: 'This is my second comment')
+Comment.create(user_id: 3, post_id: 20, text: 'This is my third comment')
+Comment.create(user_id: 3, post_id: 26, text: 'This is my fourth comment')
+Comment.create(user_id: 3, post_id: 8, text: 'This is my fifth comment')
+Comment.create(user_id: 3, post_id: 13, text: 'This is my sixth comment')
+Comment.create(user_id: 3, post_id: 20, text: 'This is my seventh comment')
+Comment.create(user_id: 3, post_id: 26, text: 'This is my eigth comment')

@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user = User.first
-    @comment.post = @post
+    @comment.user_id = User.first.id
+    @comment.post_id = @post.id
 
     if @comment.save
       redirect_to user_post_path(@user, @post), notice: 'Comment created successfully.'

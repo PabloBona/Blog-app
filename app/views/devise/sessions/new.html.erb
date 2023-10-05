@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <% if notice %>
+    <p class="notice"><%= notice%></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert"><%= alert%></p>
+  <% end %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "needs-validation" }, autocomplete: "off" ) do |f| %>
+    <div class="mb-3">
+      <%= f.email_field :email, placeholder: "Email address" , class: "form-control" , autofocus: true, required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.password_field :password, placeholder: "Password" , class: "form-control" , autocomplete: "current-password" , required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.submit "Log in" , class: "border btn btn-light w-100" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Log in" , new_user_session_path %> |
+  <%= link_to "Sign up" , new_user_registration_path %> |
+  <%= link_to "Forgot your password?" , new_user_password_path %>
+</div>

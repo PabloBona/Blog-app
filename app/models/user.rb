@@ -3,11 +3,13 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: :user_id
   has_many :likes, foreign_key: :user_id
 
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :validatable
+  # Validaciones
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
-
-  # Add validations
-  validates :name, presence: true
-  validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end
