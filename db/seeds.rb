@@ -5,7 +5,8 @@ first_user = User.create!(
   photo: "https://i.pravatar.cc/150?img=1",
   bio: "Dedicated educator with a passion for fostering learning...",
   posts_counter: 0,
-  confirmed_at: Time.now
+  confirmed_at: Time.now,
+  role: :admin
 )
 
 second_user = User.create!(
@@ -15,7 +16,8 @@ second_user = User.create!(
   photo: "https://i.pravatar.cc/150?img=2",   
   bio: "Experienced professional striving for excellence in every endeavor...",
   posts_counter: 0,
-  confirmed_at: Time.now
+  confirmed_at: Time.now,
+  role: :user
 )
 
 third_user = User.create!(
@@ -25,7 +27,8 @@ third_user = User.create!(
   photo: "https://i.pravatar.cc/150?img=5",
   bio: "Passionate creative exploring the world through art and imagination...",
   posts_counter: 0,
-  confirmed_at: Time.now
+  confirmed_at: Time.now,
+  role: :user
 )
 
 fourth_user = User.create!(
@@ -35,7 +38,8 @@ fourth_user = User.create!(
   photo: "https://i.pravatar.cc/150?img=4",
   bio: "Curious learner seeking knowledge and inspiration in every moment...",
   posts_counter: 0,
-  confirmed_at: Time.now
+  confirmed_at: Time.now,
+  role: :admin
 )
 # User 1 Post
 first_post = Post.create(author_id: 1, title: 'My First Post', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis mi in urna eleifend vehicula sit amet a mauris. Proin eget lacus sit amet velit aliquet dictum.', comments_counter: 0, likes_counter: 0)
@@ -100,3 +104,53 @@ Comment.create(user_id: 3, post_id: 8, text: 'This is my fifth comment')
 Comment.create(user_id: 3, post_id: 13, text: 'This is my sixth comment')
 Comment.create(user_id: 3, post_id: 20, text: 'This is my seventh comment')
 Comment.create(user_id: 3, post_id: 26, text: 'This is my eigth comment')
+
+# Post Comments User 4
+Comment.create(user_id: 4, post_id: 8, text: 'This is my first comment')
+Comment.create(user_id: 4, post_id: 13, text: 'This is my second comment')
+Comment.create(user_id: 4, post_id: 20, text: 'This is my third comment')
+Comment.create(user_id: 4, post_id: 26, text: 'This is my fourth comment')
+Comment.create(user_id: 4, post_id: 8, text: 'This is my fifth comment')
+Comment.create(user_id: 4, post_id: 13, text: 'This is my sixth comment')
+Comment.create(user_id: 4, post_id: 20, text: 'This is my seventh comment')
+Comment.create(user_id: 4, post_id: 26, text: 'This is my eigth comment')
+
+# Likes user1
+Like.create(user_id: 1, post_id: 8)
+Like.create(user_id: 1, post_id: 13)
+Like.create(user_id: 1, post_id: 20)
+Like.create(user_id: 1, post_id: 26)
+Like.create(user_id: 1, post_id: 8)
+Like.create(user_id: 1, post_id: 13)
+Like.create(user_id: 1, post_id: 20)
+Like.create(user_id: 1, post_id: 26)
+
+# Likes user2
+Like.create(user_id: 2, post_id: 8)
+Like.create(user_id: 2, post_id: 13)
+Like.create(user_id: 2, post_id: 20)
+Like.create(user_id: 2, post_id: 26)
+Like.create(user_id: 2, post_id: 8)
+Like.create(user_id: 2, post_id: 13)
+Like.create(user_id: 2, post_id: 20)
+Like.create(user_id: 2, post_id: 26)
+
+# Likes user3
+Like.create(user_id: 3, post_id: 8)
+Like.create(user_id: 3, post_id: 13)
+Like.create(user_id: 3, post_id: 20)
+Like.create(user_id: 3, post_id: 26)
+Like.create(user_id: 3, post_id: 8)
+Like.create(user_id: 3, post_id: 13)
+Like.create(user_id: 3, post_id: 20)
+Like.create(user_id: 3, post_id: 26)
+
+# Likes user4
+Like.create(user_id: 4, post_id: 8)
+Like.create(user_id: 4, post_id: 13)
+Like.create(user_id: 4, post_id: 20)
+Like.create(user_id: 4, post_id: 26)
+Like.create(user_id: 4, post_id: 8)
+Like.create(user_id: 4, post_id: 13)
+Like.create(user_id: 4, post_id: 20)
+Like.create(user_id: 4, post_id: 26)

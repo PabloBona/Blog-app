@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_user_and_post
+  before_action :set_user_and_post, only: %i[new create]
   before_action :authenticate_user!, only: %i[create destroy]
   load_and_authorize_resource
 
@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = User.first.id
+    @comment.user_id = current_user
     @comment.post_id = @comment.post
 
     if @comment.save

@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: :user_id, dependent: :destroy
   has_many :likes, foreign_key: :user_id, dependent: :destroy
 
+  enum role: %i[user admin]
+
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
   # Validaciones
