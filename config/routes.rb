@@ -12,4 +12,11 @@ Rails.application.routes.draw do
   end
 
   get '/likes/:id/create', to: 'likes#create', as: 'increment_likes'
+
+  namespace :api, defaults: { format: :json } do
+    resources :sessions
+    resources :posts, only: [:index] do
+      resources :comments, only: [:index, :create]
+    end
+  end
 end
