@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_user_and_post
+  before_action :set_user_and_post, only: %i[new create]
+  before_action :authenticate_user!, only: %i[create destroy]
+  load_and_authorize_resource
 
   def new
     @comment = Comment.new
@@ -7,7 +9,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = User.first.id
+    @comment.user_id = current_user.id
     @comment.post_id = @post.id
 
     if @comment.save
@@ -15,6 +17,14 @@ class CommentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @post.decrement!(:comments_counter)
+    @comment.destroy!
+    redirect_to user_post_path(id: @post.id), notice: 'Comment deleted'
   end
 
   private
