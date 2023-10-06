@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create], if: -> { request.format.json? }
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create]
 
   def index
     comments = load_comments
@@ -11,7 +11,7 @@ class Api::CommentsController < ApplicationController
   def create
     user = current_user
     post = Post.find(params[:post_id])
-    new_comment = post.comments.new(comment_params.merge(author: user))
+    new_comment = post.comments.new(comment_params.merge(user:))
 
     if new_comment.save
       render json: { success: 'Comment added!' }
