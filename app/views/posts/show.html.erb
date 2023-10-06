@@ -45,8 +45,7 @@
           <li>
             <strong><%= comment.user.name %>:</strong> <%= comment.text %>
               <% if user_signed_in? && can?(:destroy, comment) %>
-    <%= button_to 'Delete comment', user_post_comment_path(comment.post, comment), method: :delete, class: "btn btn-danger mx-1" %>
-  <% end %>
+<%= button_to 'Delete comment', user_post_comment_path(@post.author, comment.post, comment), method: :delete, class: "btn btn-danger mx-1" %>  <% end %>
           </li>
         <% end %>
       <% end %>
