@@ -82,3 +82,10 @@ gem 'rails-ujs'
 gem 'cssbundling-rails', '~> 1.3'
 
 gem 'jsbundling-rails', '~> 1.2'
+# Gemfile
+gem 'rswag-api'
+gem 'rswag-ui'
+
+group :development, :test do
+  gem 'rswag-specs'
+end
