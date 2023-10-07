@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe '/users/posts', type: :request do
   let(:user) do
     User.create(
-      name: 'Federica Ulzurrun',
-      photo: 'https://unsplash.com/es/fotos/fIq0tET6llw',
+      name: 'P',
+      photo: 'https://unsplash.com/es/fotos/fIq0asdtET6llw',
       bio: 'Student - Developer',
       posts_counter: 0
     )
